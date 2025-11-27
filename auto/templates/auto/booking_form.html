@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Auto Detailing Service</title>
+
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #f4f4f4;
+            --text-gray: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #161616;
+            color: var(--text-light);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.1rem;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #c0392b;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        /* Make service dropdown clearly visible */
+    select {
+        appearance: auto !important;        /* show dropdown arrow */
+        -webkit-appearance: auto !important;
+        -moz-appearance: auto !important;
+
+        background: #161616;
+        color: var(--text-light);
+        border: 1px solid #333;
+        padding: 12px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    /* Dropdown arrow color fix for dark mode */
+    select option {
+        background: #1e1e1e;
+        color: var(--text-light);   
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Book Your Service</h1>
+
+        <form method="POST" novalidate>
+            {% csrf_token %}
+
+            {% for field in form %}
+                <label>{{ field.label }}</label>
+                {{ field }}
+            {% endfor %}
+
+            <button type="submit">Submit Booking</button>
+        </form>
+
+        <a href="/" class="back-link">← Back to Home</a>
+    </div>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Enable Popup Calendar -->
+    <script>
+        flatpickr("input[name='date']", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            disableMobile: true,   // forces popup even on phones
+        });
+    </script>
+
+</body>
+</html>

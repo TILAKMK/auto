@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Auto Detailing | Expert Car Care</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #e74c3c; /* Sporty Red */
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #f4f4f4;
+            --text-gray: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--primary-color); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--primary-color); }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover { background-color: #c0392b; }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            color: var(--text-gray);
+        }
+
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 50px 0 20px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 5%;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 { margin-bottom: 15px; }
+        .service-card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #181818;
+            padding: 50px 5%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 250px;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: var(--text-gray);
+            margin-top: auto;
+            border-top: 1px solid #333;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; padding-bottom: 20px; }
+            nav ul { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Auto<span>Detailer</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+919876543210" class="cta-btn">Call to Book</a>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Restore Your Car's Showroom Shine</h1>
+        <p>Professional Foam Washing, Interior Dry Cleaning, and Detailing Services. We treat your car like it's our own.</p>
+        <a href="/book/" class="cta-btn">Book Now</a>
+    </section>
+
+    <h2 class="section-title" id="services">Our Premium Services</h2>
+    <div class="services-container">
+        
+        <div class="service-card">
+            <div class="service-icon">🚿</div>
+            <h3>Foam Washing</h3>
+            <p>High-pressure pre-wash followed by a thick snow foam bath to safely lift dirt without scratching your paint. Includes tyre dressing.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💺</div>
+            <h3>Interior Dry Cleaning</h3>
+            <p>Deep cleaning of upholstery, roof lining, mats, and carpets using vacuum and eco-friendly chemicals to remove stains and odors.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Rubbing & Polishing</h3>
+            <p>Machine polishing to remove minor scratches and swirl marks, restoring the glossy finish of your vehicle's exterior.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🛡️</div>
+            <h3>Ceramic Coating</h3>
+            <p>Long-lasting paint protection that repels water, dirt, and UV rays, keeping your car cleaner for longer.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🦠</div>
+            <h3>Sanitization</h3>
+            <p>Complete interior steam cleaning and disinfection to eliminate bacteria and ensure a healthy driving environment.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">⚙️</div>
+            <h3>Engine Bay Detailing</h3>
+            <p>Careful degreasing and dressing of the engine bay to make it look brand new and prevent corrosion.</p>
+        </div>
+
+    </div>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <p>Ready to give your car a makeover? Call us or email us today.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <strong>📞 Phone</strong>
+                <p>+91 81238 23193</p>
+                <p>(Available 9 AM - 8 PM)</p>
+            </div>
+            
+            <div class="contact-item">
+                <strong>📧 Email</strong>
+                <p>autodetailer@gmail.com</p>
+            </div>
+
+            <div class="contact-item">
+                <strong>📍 Location</strong>
+                <p>jss campus back gate,</p>
+                <p>Vijay Nagar, Mysuru</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 autodetailer. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
